@@ -1,0 +1,6 @@
+name: page
+
+on: push
+
+jobs:
+  first_job:
