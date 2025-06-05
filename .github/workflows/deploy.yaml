@@ -9,3 +9,7 @@ jobs:
     steps:
     - name: hola
       run: echo "${{ secrets.NAME }}"
+    - name: hola2
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
