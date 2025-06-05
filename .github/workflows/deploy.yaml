@@ -1,6 +1,11 @@
-name: page
+name: deploy
+description: Deploy workflow
 
 on: push
 
 jobs:
   first_job:
+    runs-on: ubuntu-latest # <- Obligatorio: define el sistema operativo
+    steps:
+    - name: hola
+      run: echo "Hello, world!"
