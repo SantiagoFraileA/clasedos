@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest # <- Obligatorio: define el sistema operativo
     steps:
     - name: hola
-      run: echo "Hello, world!"
+      run: echo "${{ secrets.NAME }}"
