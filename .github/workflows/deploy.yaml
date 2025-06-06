@@ -21,6 +21,9 @@ jobs:
       # <- Obligatorio: instala las dependencias del proyecto 
     - name: run tests
       run: npm test # <- Opcional: ejecuta las pruebas del proyecto
+    - name: build
+      run: npm run build # <- Obligatorio: construye el proyecto
+
   deploy:
     runs-on: ubuntu-latest # <- Obligatorio: define el sistema operativo
 
