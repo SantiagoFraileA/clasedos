@@ -6,7 +6,20 @@ on: push
 jobs:
   first_job:
     runs-on: ubuntu-latest # <- Obligatorio: define el sistema operativo
+
+    services:
+    - name: redis
+      image: redis:latest
+      ports:
+      - 3000:3000
+
     steps:
+    - name: install redis code
+      run: sudo apt-get install redis-server && apt-get install redis-tools
+
+    - name: start redis
+      run: redis cli -h localhost -p 3000 ping
+
     - name: hola
       run: echo "${{ secrets.NAME }}"
     - name: hola2
