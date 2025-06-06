@@ -36,7 +36,7 @@ jobs:
       pages: write # <- Obligatorio: permite escribir en GitHub Pages
       id-token: write # <- Opcional: permite la autenticación con ID de token
 
-    enveironment:
+    environment:
       name: github-pages # <- Opcional: define el entorno de despliegue
       url: ${{ steps.deployment.outputs.page_url }} # <- Opcional: URL de la página desplegada
 
