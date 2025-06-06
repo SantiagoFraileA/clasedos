@@ -4,7 +4,7 @@ description: Deploy workflow
 on: push
 
 jobs:
-  first_job:
+  build:
     runs-on: ubuntu-latest # <- Obligatorio: define el sistema operativo
 
     steps:
@@ -21,3 +21,11 @@ jobs:
       # <- Obligatorio: instala las dependencias del proyecto 
     - name: run tests
       run: npm test # <- Opcional: ejecuta las pruebas del proyecto
+  deploy:
+    runs-on: ubuntu-latest # <- Obligatorio: define el sistema operativo
+
+    needs: build # <- Opcional: espera a que el trabajo de construcción se complete
+
+    steps:
+    - name: deploy checkout
+      run: echo  "deploy"
