@@ -20,10 +20,13 @@ jobs:
     - name: start redis
       run: redis-cli -h localhost -p 6379 ping
 
-    - name: hola
-      run: echo "${{ secrets.NAME }}"
+    - name: setup
+      uses: actions/checkout@v4 # <- Obligatorio: descarga el código del repositorio
 
-    - name: hola2
-      uses: actions/setup-node@v4
+    - name: setup
+      uses: actions/setup-node@v4 # <- Obligatorio: configura el entorno de Node.js
       with:
         node-version: '18'
+
+    - name: install dependencies
+      run: npm install # <- Obligatorio: instala las dependencias del proyecto 
