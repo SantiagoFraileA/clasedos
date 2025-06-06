@@ -1,8 +1,6 @@
 name: deploy
 description: Deploy workflow
 
-on: push
-
 jobs:
   build:
     runs-on: ubuntu-latest # <- Obligatorio: define el sistema operativo
