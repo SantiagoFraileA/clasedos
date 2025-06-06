@@ -1,5 +1,5 @@
-name: deploy
-description: Deploy workflow
+#name: deploy
+#description: Deploy workflow
 
 jobs:
   build:
