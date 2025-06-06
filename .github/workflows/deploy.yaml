@@ -32,13 +32,14 @@ jobs:
 
     runs-on: ubuntu-latest # <- Obligatorio: define el sistema operativo
     needs: build # <- Obligatorio: depende del trabajo de construcción
-    permisions:
+    permissions:
       pages: write # <- Obligatorio: permite escribir en GitHub Pages
       id-token: write # <- Opcional: permite la autenticación con ID de token
 
     enveironment:
       name: github-pages # <- Opcional: define el entorno de despliegue
       url: ${{ steps.deployment.outputs.page_url }} # <- Opcional: URL de la página desplegada
+
     steps:
     - name: deploy pages
       id: deploy-pages
