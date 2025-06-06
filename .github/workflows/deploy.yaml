@@ -11,14 +11,14 @@ jobs:
     - name: redis
       image: redis:latest
       ports:
-      - 3000:3000
+      - 6379:6379
 
     steps:
     - name: install redis code
       run: sudo apt-get install redis-server && apt-get install redis-tools
 
     - name: start redis
-      run: redis cli -h localhost -p 3000 ping
+      run: redis-cli -h localhost -p 6379 ping
 
     - name: hola
       run: echo "${{ secrets.NAME }}"
